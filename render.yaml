@@ -2,21 +2,15 @@ services:
   - type: web
     name: daniel2008-job-resume-matcher-api
     runtime: docker
-    plan: 0.5c-512mb
+    plan: free
     dockerfilePath: ./backend/Dockerfile
     dockerContext: ./backend
     healthCheckPath: /health
     envVars:
       - key: PORT
         value: 10000
-      - key: TALENTLENS_AUTH_DB
-        value: /var/data/talentlens.db
       - key: TALENTLENS_FRONTEND_ORIGIN
         value: https://daniel2008-job-resume-matcher-web.onrender.com
-    disk:
-      name: talentlens-data
-      mountPath: /var/data
-      sizeGB: 1
 
   - type: web
     name: daniel2008-job-resume-matcher-web

@@ -37,4 +37,4 @@ The Java matching engine combines TF-IDF semantic similarity with a normalized s
 
 ## Render
 
-The root `render.yaml` defines a Java API web service and a React static site. After pushing the repository to GitHub, create a Blueprint from the repository in the Render Dashboard and review the service plan before confirming. The API uses a 1 GB persistent disk for SQLite, which requires a paid web-service plan; without persistent storage, account data would be lost on restart. Existing local accounts are not copied to Render.
+The root `render.yaml` defines a free Java API web service and a free React static site. Create a Blueprint from the repository in the Render Dashboard. The free API has an ephemeral filesystem and may sleep when idle, so SQLite accounts and sessions can be lost on restart or redeploy. Existing local accounts are not copied to Render.
