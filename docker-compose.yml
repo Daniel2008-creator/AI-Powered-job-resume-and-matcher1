@@ -1,0 +1,15 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      TALENTLENS_AUTH_DB: /app/data/talentlens.db
+    volumes:
+      - ./backend/data:/app/data
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
